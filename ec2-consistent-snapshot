@@ -554,6 +554,7 @@ sub fs_thaw {
   my ($freeze_filesystem) = @_;
 
   for my $filesystem ( @$freeze_filesystem ) {
+    $Debug and warn "$Prog: Unfreezing fs: $filesystem with $freeze_cmd.\n";
     run_command([$freeze_cmd, '-u', $filesystem]);
   }
 }
